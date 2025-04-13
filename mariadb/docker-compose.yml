@@ -3,10 +3,17 @@ services:
     image: mariadb:noble
     restart: always
     environment:
-      MARIADB_USER: myguy
-      MARIADB_PASSWORD: coolguy
-      MARIADB_ROOT_PASSWORD: hideallthis
-      MARIADB_DATABASE: projects
+      MARIADB_USER_FILE: /run/secrets/mariadb_user
+      MARIADB_PASSWORD_FILE: /run/secrets/mariadb_password
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/mariadb_root_password
+      MARIADB_DATABASE_FILE: /run/secrets/mariadb_database
+    secrets:
+      - mariadb_user
+      - mariadb_password
+      - mariadb_root_password
+      - mariadb_database
+    volumes:
+      - ./db_data:/var/lib/mysql:Z
     ports:
       - 3306:3306
 
@@ -15,3 +22,13 @@ services:
     restart: always
     ports:
       - 3380:8080
+
+secrets:
+  mariadb_user:
+    file: ./.secrets/.secret_mariadb_user
+  mariadb_password:
+    file: ./.secrets/.secret_mariadb_password
+  mariadb_root_password:
+    file: ./.secrets/.secret_mariadb_root_password
+  mariadb_database:
+    file: ./.secrets/.secret_mariadb_database
