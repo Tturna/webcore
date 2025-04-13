@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mariadb:noble
+    restart: always
+    environment:
+      MARIADB_USER: myguy
+      MARIADB_PASSWORD: coolguy
+      MARIADB_ROOT_PASSWORD: hideallthis
+      MARIADB_DATABASE: projects
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer:5
+    restart: always
+    ports:
+      - 3380:8080

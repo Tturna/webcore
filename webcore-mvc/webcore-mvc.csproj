@@ -7,4 +7,8 @@
     <RootNamespace>webcore_mvc</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySQL" Version="8.0.3" />
+  </ItemGroup>
+
 </Project>

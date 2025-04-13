@@ -7,10 +7,12 @@ namespace webcore_mvc.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly MariaDBContext _dbContext;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, MariaDBContext dbContext)
     {
         _logger = logger;
+        _dbContext = dbContext;
     }
 
     public IActionResult Index()
