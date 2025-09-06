@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var dbVersion = new MySqlServerVersion(new Version(8, 0, 40));
 var connString = builder.Configuration.GetConnectionString("MariaDB_ConnectionString");
+var dbVersion = ServerVersion.AutoDetect(connString);
 
 if (builder.Environment.IsDevelopment())
 {
