@@ -95,6 +95,10 @@ a:hover {
     contain: content;
 }
 
+.experience-card h3, .experience-card p {
+    display: inline-block;
+}
+
 .decor-feature {
     position: absolute;
     top: -1rem;
@@ -148,6 +152,11 @@ a:hover {
 
 .subtitle {
     font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.heading {
+    font-size: 3rem;
     font-weight: 600;
 }
 
