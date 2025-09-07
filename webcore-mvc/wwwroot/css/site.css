@@ -83,6 +83,43 @@ a:hover {
   margin-left: 1em;
 }
 
+.card-body {
+    contain: content;
+}
+
+.decor-feature {
+    position: absolute;
+    top: -1rem;
+    right: 10rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--apricot);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.decor-feature::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: 5rem;
+    width: 12rem;
+    height: 12rem;
+    background-color: var(--apricot);
+    border-radius: 50%;
+}
+
+.decor-feature::after {
+    content: "";
+    position: absolute;
+    top: 9rem;
+    left: -28rem;
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--mountbatten-pink);
+    border-radius: 50%;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;

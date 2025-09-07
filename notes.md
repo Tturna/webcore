@@ -1,0 +1,13 @@
+Things to consider and check out for the website:
+- Timeline (experience, edu, jobs)
+- List what you know!
+  - Languages
+  - Frameworks (front, mid, back)
+  - Engines
+  - ORMs !!
+  - DBs
+  - Tools (git, 
+  - LeafletJS
+  - Discord bot
+  - APIs you've made
+  - all the shit
