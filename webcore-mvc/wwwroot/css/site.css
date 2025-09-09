@@ -49,6 +49,14 @@ a:hover {
     color: white;
 }
 
+.bg-apricot {
+    background-color: var(--apricot);
+}
+
+.bg-cambridge-blue {
+    background-color: var(--cambridge-blue);
+}
+
 .bg-mountbatten-pink {
     background-color: var(--mountbatten-pink);
 }
@@ -57,8 +65,8 @@ a:hover {
     background-color: var(--english-violet);
 }
 
-.text-white {
-    color: white;
+.bg-eng-violet-dark {
+    background-color: var(--english-violet-dark);
 }
 
 .text-cambridge-blue {
@@ -67,6 +75,18 @@ a:hover {
 
 .text-apricot {
     color: var(--apricot);
+}
+
+.text-mountbatten-pink {
+    color: var(--mountbatten-pink);
+}
+
+.text-eng-violet {
+    color: var(--english-violet);
+}
+
+.text-eng-violet-dark {
+    color: var(--english-violet-dark);
 }
 
 .lined-text, .lined-text-center {
@@ -91,8 +111,46 @@ a:hover {
   margin-left: 1em;
 }
 
+.btn {
+    /* border-radius: 1.25rem; */
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn:active:focus {
+    box-shadow: none;
+}
+
+.card {
+    contain: content;
+    border: none;
+}
+
+.card img {
+    max-height: 21rem;
+    object-fit: cover;
+}
+
 .card-body {
     contain: content;
+}
+
+.skill-icon-row {
+    justify-content: space-between;
+}
+
+.skill-icon-row div {
+    flex: 0 0 auto;
+    width: 16.666667%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.skill-icon-row img {
+    max-width: 48px;
+    max-height: 48px;
 }
 
 .experience-card h3, .experience-card p {
@@ -129,6 +187,39 @@ a:hover {
     width: 7rem;
     height: 7rem;
     background-color: var(--mountbatten-pink);
+    border-radius: 50%;
+}
+
+.decor-feature-secondary {
+    position: absolute;
+    top: -1rem;
+    right: 10rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--mountbatten-pink);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.decor-feature-secondary::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: 5rem;
+    width: 12rem;
+    height: 12rem;
+    background-color: var(--mountbatten-pink);
+    border-radius: 50%;
+}
+
+.decor-feature-secondary::after {
+    content: "";
+    position: absolute;
+    top: 9rem;
+    left: -28rem;
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--apricot);
     border-radius: 50%;
 }
 
