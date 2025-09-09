@@ -223,6 +223,11 @@ a:hover {
     border-radius: 50%;
 }
 
+.decor-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--mountbatten-pink);
+}
+
 .profile-img {
     text-align: center;
     width: 24rem;
