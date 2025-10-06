@@ -40,6 +40,15 @@ body {
     "wdth" 100;
 }
 
+/* Order should change when screen width is small */
+.profile-img-container {
+    order: 1;
+}
+
+.title-container {
+    order: 2;
+}
+
 .details-text {
     text-decoration: none;
     color: var(--apricot);
@@ -153,10 +162,6 @@ a:hover {
     max-height: 48px;
 }
 
-.experience-card h3, .experience-card p {
-    display: inline-block;
-}
-
 .decor-feature {
     position: absolute;
     top: -1rem;
@@ -183,7 +188,7 @@ a:hover {
     content: "";
     position: absolute;
     top: 9rem;
-    left: -28rem;
+    left: -18rem;
     width: 7rem;
     height: 7rem;
     background-color: var(--mountbatten-pink);
@@ -216,7 +221,7 @@ a:hover {
     content: "";
     position: absolute;
     top: 9rem;
-    left: -28rem;
+    left: -18rem;
     width: 7rem;
     height: 7rem;
     background-color: var(--apricot);
@@ -232,6 +237,8 @@ a:hover {
     text-align: center;
     width: 24rem;
     height: 24rem;
+    background-color: var(--mountbatten-pink);
+    border-radius: 50%;
 }
 
 .profile-img img {
@@ -256,8 +263,35 @@ a:hover {
     font-weight: 600;
 }
 
+.row-gap {
+    row-gap: 1rem;
+}
+
+.row .col-6 {
+    min-width: 400px;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+
+@media (max-width: 1000px) {
+    .profile-img-container {
+        order: 2;
+        width: auto;
+    }
+
+    .title-container {
+        order: 1;
+    }
+
+    .row .col-6 {
+        width: 100%;
+    }
+
+    .contact-card {
+        width: auto;
+    }
 }

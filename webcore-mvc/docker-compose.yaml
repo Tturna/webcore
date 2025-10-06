@@ -1,0 +1,43 @@
+services:
+  webcore:
+    build: .
+    restart: unless-stopped
+    env_file: "webcore.env"
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+
+  db:
+    image: mariadb:noble
+    restart: unless-stopped
+    environment:
+      MARIADB_USER_FILE: /run/secrets/mariadb_user
+      MARIADB_PASSWORD_FILE: /run/secrets/mariadb_password
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/mariadb_root_password
+      MARIADB_DATABASE_FILE: /run/secrets/mariadb_database
+    secrets:
+      - mariadb_user
+      - mariadb_password
+      - mariadb_root_password
+      - mariadb_database
+    volumes:
+      - ./db_data:/var/lib/mysql:Z
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer:5
+    restart: unless-stopped
+    ports:
+      - 3380:8080
+
+secrets:
+  mariadb_user:
+    file: ../mariadb/.secrets/.secret_mariadb_user
+  mariadb_password:
+    file: ../mariadb/.secrets/.secret_mariadb_password
+  mariadb_root_password:
+    file: ../mariadb/.secrets/.secret_mariadb_root_password
+  mariadb_database:
+    file: ../mariadb/.secrets/.secret_mariadb_database
