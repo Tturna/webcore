@@ -152,7 +152,7 @@ a:hover {
 
 .skill-icon-row div {
     flex: 0 0 auto;
-    width: 16.666667%;
+    width: auto;
     white-space: nowrap;
     text-align: center;
 }
@@ -268,7 +268,7 @@ a:hover {
 }
 
 .row .col-6 {
-    min-width: 400px;
+    min-width: 350px;
 }
 
 @media (min-width: 768px) {
@@ -293,5 +293,15 @@ a:hover {
 
     .contact-card {
         width: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .title-container {
+        width: 100%;
     }
 }
