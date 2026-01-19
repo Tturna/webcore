@@ -1,21 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var connString = builder.Configuration.GetConnectionString("MariaDB_ConnectionString");
-
-Console.WriteLine($"Conn string: {connString}");
+var connString = builder.Configuration["WEBCORE_DB_CONNECTIONSTRING"];
 
 if (connString is null)
 {
-    connString = builder.Configuration["WEBCORE_DB_CONNECTIONSTRING"];
+    connString = builder.Configuration.GetConnectionString("MariaDB_ConnectionString");
 }
-
-Debug.WriteLine($"Conn string: {connString}");
 
 var dbVersion = ServerVersion.AutoDetect(connString);
 
